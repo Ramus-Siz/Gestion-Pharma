@@ -1,5 +1,10 @@
 import { NavLink } from "react-router-dom";
 function Navbar() {
+  function handleClickAdmin() {
+    user.pseudo = "";
+    user.isLogged = false;
+    // setChecked(!checked);
+  }
   return (
     <nav>
       <ul>
@@ -13,7 +18,9 @@ function Navbar() {
           <NavLink to="/about">About</NavLink>
         </li>
         <li>
-          <NavLink to="/">Deconnexion</NavLink>
+          <NavLink to="/" onClick={handleClickAdmin}>
+            Deconnexion
+          </NavLink>
         </li>
       </ul>
     </nav>

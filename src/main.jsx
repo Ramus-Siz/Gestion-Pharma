@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import App from './App.jsx'
 
 import "./index.css";
 import Login from "./pages/login";
@@ -16,66 +15,67 @@ import CreateProduct from "./pages/pages-dashboard/create-product";
 import UpdateProduct from "./pages/pages-dashboard/update-product";
 import DeleteProduct from "./pages/pages-dashboard/delete-product";
 import LayoutDashboard from "./components/layout/layout-dashboard";
+import App from "./App";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Login />,
-  },
-  {
-    path: "/",
-    element: <LayoutDashboard />,
-    children: [
-      {
-        path: "/allproduct",
-        element: <AllProducts />,
-      },
-      {
-        path: "/createproduct",
-        element: <CreateProduct />,
-      },
-      {
-        path: "/updateproduct",
-        element: <UpdateProduct />,
-      },
-      {
-        path: "/deleteproduct",
-        element: <DeleteProduct />,
-      },
-    ],
-  },
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/home",
-        element: <Home />,
-      },
-      {
-        path: "/about",
-        element: <About />,
-      },
-      {
-        path: "/products",
-        element: <Products />,
-        children: [
-          {
-            path: "",
-            element: <ProductList />,
-          },
-          {
-            path: ":id",
-            element: <SingleProduct />,
-          },
-        ],
-      },
-    ],
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: "/",
+//     element: <Login />,
+//   },
+//   {
+//     path: "/",
+//     element: <LayoutDashboard />,
+//     children: [
+//       {
+//         path: "/allproduct",
+//         element: <AllProducts />,
+//       },
+//       {
+//         path: "/createproduct",
+//         element: <CreateProduct />,
+//       },
+//       {
+//         path: "/updateproduct",
+//         element: <UpdateProduct />,
+//       },
+//       {
+//         path: "/deleteproduct",
+//         element: <DeleteProduct />,
+//       },
+//     ],
+//   },
+//   {
+//     path: "/",
+//     element: <Layout />,
+//     children: [
+//       {
+//         path: "/home",
+//         element: <Home />,
+//       },
+//       {
+//         path: "/about",
+//         element: <About />,
+//       },
+//       {
+//         path: "/products",
+//         element: <Products />,
+//         children: [
+//           {
+//             path: "",
+//             element: <ProductList />,
+//           },
+//           {
+//             path: ":id",
+//             element: <SingleProduct />,
+//           },
+//         ],
+//       },
+//     ],
+//   },
+// ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
